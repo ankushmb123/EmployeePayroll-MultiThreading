@@ -46,5 +46,9 @@ namespace EmployeePayroll_MultiThreading
             this.departmentSelect = departmentSelect;
 
         }
+
+        public EmployeeDetails()
+        {
+        }
     }
 }

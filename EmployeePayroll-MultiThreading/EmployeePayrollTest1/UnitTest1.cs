@@ -3,9 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 
-
-  namespace EmployeePayrollTest1
-
+  namespace EmployeePayrollTest
 {
     [TestClass]
     public class UnitTest1
@@ -27,12 +25,18 @@ using System.Collections.Generic;
             employeesListToBeAddedToDB.Add(new EmployeeDetails { employeeName = "Sapna", gender = "F", phoneNo = 9991661664, employeeAddress = "VPO Mughal Sarai, UP", startDate = DateTime.Now, basicPay = 1200000, deductions = 200000, incomeTax = 100000, companySelect = 5, employeeSelect = 27, departmentSelect = 2, });
             employeesListToBeAddedToDB.Add(new EmployeeDetails { employeeName = "Sharda", gender = "F", phoneNo = 9991661664, employeeAddress = "VPO Jakhal, Haryana", startDate = DateTime.Now, basicPay = 1200000, deductions = 200000, incomeTax = 100000, companySelect = 1, employeeSelect = 28, departmentSelect = 1, });
             employeesListToBeAddedToDB.Add(new EmployeeDetails { employeeName = "Sushma", gender = "F", phoneNo = 9991661664, employeeAddress = "VPO Nimbri, Haryana", startDate = DateTime.Now, basicPay = 1200000, deductions = 200000, incomeTax = 100000, companySelect = 4, employeeSelect = 29, departmentSelect = 3, });
-            DateTime startDateTime = DateTime.Now;
-            Console.WriteLine($"Data Addition to DB started on {startDateTime}");
-            employeePayrollDatabase.AddEmployeeListToDBWithoutThread(employeesListToBeAddedToDB);
-            DateTime endDateTime = DateTime.Now;
-            Console.WriteLine($"Data Addition to DB ended on {endDateTime}");
-            Console.WriteLine($"Time for Adding Data to DB is {endDateTime - startDateTime}");
+            //DateTime startDateTime = DateTime.Now;
+            //Console.WriteLine($"Data Addition to DB started on {startDateTime}");
+            //employeePayrollDatabase.AddEmployeeListToDBWithoutThread(employeesListToBeAddedToDB);
+            //DateTime endDateTime = DateTime.Now;
+            //Console.WriteLine($"Data Addition to DB ended on {endDateTime}");
+            //Console.WriteLine($"Time for Adding Data to DB is {endDateTime - startDateTime}");
+            DateTime startDateTime1 = DateTime.Now;
+            Console.WriteLine($"Data Addition to DB started on {startDateTime1}");
+            employeePayrollDatabase.AddEmployeeListToDBWithThread(employeesListToBeAddedToDB);
+            DateTime endDateTime1 = DateTime.Now;
+            Console.WriteLine($"Data Addition to DB ended on {endDateTime1}");
+            Console.WriteLine($"Time for Adding Data to DB is {endDateTime1 - startDateTime1}");
         }
     }
 }

@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EmployeePayroll_MultiThreading
+
 {
     public class Program
     {
         static void Main(string[] args)
-
         {
             Console.WriteLine("Welcome to Employee Payroll Database");
             EmployeePayrollDatabase employeePayrollDatabase = new EmployeePayrollDatabase();

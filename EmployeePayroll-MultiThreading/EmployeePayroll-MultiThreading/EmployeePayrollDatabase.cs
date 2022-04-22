@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace EmployeePayroll_MultiThreading
 {
@@ -17,7 +15,7 @@ namespace EmployeePayroll_MultiThreading
             SqlDataReader reader = default;
             try
             {
-                EmployeeDetails employee = new();
+                EmployeeDetails employee = new EmployeeDetails();
                 using (conn)
                 {
                     string query = @"SELECT EmployeeID,EmployeeName,Gender,CompanyName,DepartmentName,PhoneNo,EmployeeAddress,StartDate,BasicPay,Deductions,TaxablePay,IncomeTax,NetPay
@@ -112,11 +110,11 @@ namespace EmployeePayroll_MultiThreading
                 var result = command.ExecuteNonQuery();
                 if (result != 0)
                 {
-                    Console.WriteLine("Employee Details added in Database");
+                    Console.WriteLine("Employee Details Added in Database");
                 }
                 else
                 {
-                    Console.WriteLine("Employee Details not added in Database");
+                    Console.WriteLine("Employee Details not Added in Database");
                 }
             }
             catch (Exception ex)
